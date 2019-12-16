@@ -1,32 +1,22 @@
 ---
-lang: en
+layout: base.njk
 ---
-<!doctype html>
-<html lang={{ lang }}>
- <head>
-  <meta charset="utf-8">
-  <title>{{  title }}</title>
-  <link rel="stylesheet" href="/css/main.css">
- </head>
- <body>
- 	<h1>{{ title }}</h1>
-  <div class="container">
-    {%- for animal in animals -%}
-      <div class="animal">
-        <div class="animal__text">
-          <strong class="label">{{ name }}:</strong>
-          {{ animal.name }}
-        </div>
-        <div class="animal__text">
-          <strong class="label">{{ country }}:</strong>
-          {{ animal.country }}
-        </div>
-        <div class="animal__text">
-          <strong class="label">{{ description }}:</strong>
-          {{ animal.description }}
-        </div>
+<h1>{{ title }}</h1>
+<div class="container">
+  {%- for animal in animals -%}
+    <div class="animal">
+      <div class="animal__text">
+        <strong class="label">{{ name }}:</strong>
+        {{ animal.name }}
       </div>
-    {%- endfor -%}
-  </div>
- </body>
-</html>
+      <div class="animal__text">
+        <strong class="label">{{ country }}:</strong>
+        {{ animal.country }}
+      </div>
+      <div class="animal__text">
+        <strong class="label">{{ description }}:</strong>
+        {{ animal.description }}
+      </div>
+    </div>
+  {%- endfor -%}
+</div>

@@ -1,9 +1,9 @@
 ---
-key: en
 name: Name
 country: Country
 description: Description
 title: Sample 11ty - Animals
-tags: en
+lang: en
+permalink: "{{ lang }}/animal-list.html"
 layout: main.njk
 ---
