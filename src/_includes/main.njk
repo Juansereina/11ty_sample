@@ -5,18 +5,9 @@ layout: base.njk
 <div class="container">
   {%- for animal in animals -%}
     <div class="animal">
-      <div class="animal__text">
-        <strong class="label">{{ name }}:</strong>
-        {{ animal.name }}
-      </div>
-      <div class="animal__text">
-        <strong class="label">{{ country }}:</strong>
-        {{ animal.country }}
-      </div>
-      <div class="animal__text">
-        <strong class="label">{{ description }}:</strong>
-        {{ animal.description }}
-      </div>
+      {% animal_section name, animal.name %}
+      {% animal_section country, animal.country %}
+      {% animal_section description, animal.description %}
     </div>
   {%- endfor -%}
 </div>
