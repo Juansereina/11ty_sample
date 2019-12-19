@@ -3,6 +3,7 @@
     "Passthrough",
     "Shortcode",
     "eleventy",
-    "filesize"
+    "filesize",
+    "syntaxhighlight"
   ]
 }
