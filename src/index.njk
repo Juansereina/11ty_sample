@@ -10,11 +10,11 @@ lang: en
 <a href="./es/animal-list.html"><h3>es</h3></a>
 <a href="./fr/components.html"><h3>fr</h3></a>
 <h3>Js Code snippets</h3>
-{% highlight "js" %}
+{# {% highlight "js" %}
 function myFunction() {
   return true;
 }
-{% endhighlight %}
+{% endhighlight %} #}
 
 <h3>Bash Code snippets</h3>
 {% highlight "bash" %}
@@ -23,3 +23,20 @@ function myFunction() {
 NAME="John"
 echo "Hello $NAME!"
 {% endhighlight %}
+
+<script>
+ document.querySelector('pre').addEventListener('click', async event => {
+    if (!navigator.clipboard) {
+      // Clipboard API not available
+      return
+    }
+    console.log('clipboard');
+    const text = event.target.innerText
+    try {
+      await navigator.clipboard.writeText(text)
+      event.target.textContent = 'Copied to clipboard'
+    } catch (err) {
+      console.error('Failed to copy!', err)
+    }
+  })
+</script>
