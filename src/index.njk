@@ -10,33 +10,40 @@ lang: en
 <a href="./es/animal-list.html"><h3>es</h3></a>
 <a href="./fr/components.html"><h3>fr</h3></a>
 <h3>Js Code snippets</h3>
-{# {% highlight "js" %}
-function myFunction() {
-  return true;
-}
-{% endhighlight %} #}
+{% copy %}
+  {% highlight "js" %}
+  function myFunction() {
+    return true;
+  }
+  {% endhighlight %}
+{% endcopy %}
 
 <h3>Bash Code snippets</h3>
-{% highlight "bash" %}
-#!/usr/bin/env bash
+{% copy %}
+  {% highlight "bash" %}
+  #!/usr/bin/env bash
 
-NAME="John"
-echo "Hello $NAME!"
-{% endhighlight %}
+  NAME="John"
+  echo "Hello $NAME!"
+  {% endhighlight %}
+{% endcopy %}
+
+ <textarea rows="10" cols="100">
+</textarea>
 
 <script>
- document.querySelector('pre').addEventListener('click', async event => {
-    if (!navigator.clipboard) {
-      // Clipboard API not available
-      return
+  async function handleCopyToClipboard(event) {
+    const [preElement] = event.children;
+    const { innerText, innerHTML } = preElement;
+
+    if (navigator && navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(innerText)
+        preElement.textContent = 'Copied to clipboard!'
+        setTimeout(() => preElement.innerHTML = innerHTML , 2000);
+      } catch (err) {
+        console.error('Failed to copy!', err)
+      }
     }
-    console.log('clipboard');
-    const text = event.target.innerText
-    try {
-      await navigator.clipboard.writeText(text)
-      event.target.textContent = 'Copied to clipboard'
-    } catch (err) {
-      console.error('Failed to copy!', err)
-    }
-  })
+  }
 </script>
