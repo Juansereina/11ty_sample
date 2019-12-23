@@ -9,10 +9,22 @@ lang: en
 <a href="./en/animal-list.html"><h3>en</h3></a>
 <a href="./es/animal-list.html"><h3>es</h3></a>
 <a href="./fr/components.html"><h3>fr</h3></a>
+<a href="./prueba/index.html"><h3>prueba</h3></a>
 <h3>Js Code snippets</h3>
 {% copy %}
   {% highlight "js" %}
   function myFunction() {
+    const test = {
+      first: {
+        nesting: () => {
+          try {
+            execute()
+          } catch (err) {
+            console.log(err)
+          }
+        }
+      }
+    }
     return true;
   }
   {% endhighlight %}

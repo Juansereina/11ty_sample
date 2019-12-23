@@ -13,6 +13,8 @@
     "@11ty/eleventy": "^0.9.0"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "markdown-it": "^10.0.0",
+    "prismjs": "^1.17.1"
   }
 }
