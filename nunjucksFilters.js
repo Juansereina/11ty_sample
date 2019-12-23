@@ -7,13 +7,17 @@ const animalSection = (label, content) => `
   </div>
 `;
 
-const CopyClipboardElementWrapper = (content, format = "html") => {
-  (`<div onclick="handleCopyToClipboard(this)">${content}</div>`)
+const CopyClipboardElementWrapper = (content, prefixCode) => {
+  return `<div onclick="handleCopyToClipboard(this)">
+
+${content}
+
+</div>`;
 };
 
 const nunjucksFilters = (eleventyConfig) => {
   eleventyConfig.addNunjucksShortcode("animal_section", animalSection);
-  eleventyConfig.addPairedNunjucksShortcode("copy", CopyClipboardElementWrapper);
+  eleventyConfig.addPairedShortcode("copy", CopyClipboardElementWrapper);
 }
 
 module.exports = nunjucksFilters;
