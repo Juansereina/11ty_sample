@@ -15,8 +15,8 @@ async function compileFiles() {
   eleventy.setPassthroughAll(true);
 
   // Compile files
-  await eleventy.init();
-  await eleventy.write();
+/*   await eleventy.init();
+  await eleventy.write(); */
 }
 
 compileFiles();

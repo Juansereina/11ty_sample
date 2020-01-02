@@ -1,10 +1,12 @@
-const { importHtml, render } = require('../utils/testing');
-const SnippetSample = importHtml('index.html')
+const { render } = require('../utils/testing');
 
 describe('SnippetSample', () => {
-  it('Should render the title correctly', () => {
-      const { getByText } = render(SnippetSample);
+  const inputDirFile = "../src/index.njk";
+  const outputDirFile = "../__test__/";
 
-      expect(getByText('Hello world')).not.toBeEmpty()
-  })
+  it('Should render the title correctly', async () => {
+      const { getByText } = await render(inputDirFile, outputDirFile);
+
+      expect(getByText('Hello world')).not.toBeEmpty();
+  });
 })
